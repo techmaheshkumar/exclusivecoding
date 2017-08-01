@@ -1,0 +1,38 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>Jersey Poc</display-name>
+
+	<!-- Authentication -->
+	<filter>
+		<filter-name>Authentication-Filter</filter-name>
+		<filter-class>com.bosch.jersey.auth.RestAuthFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>Authentication-Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- Jersey Mapping -->
+	<servlet>
+		<servlet-name>RESTful-Jersey</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>com.poc.jersey.resource</param-value>
+		</init-param>
+
+		<!-- File Upload -->
+		<init-param>
+			<param-name>jersey.config.server.provider.classnames</param-name>
+			<param-value>org.glassfish.jersey.media.multipart.MultiPartFeature</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RESTful-Jersey</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+</web-app>

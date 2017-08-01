@@ -1,0 +1,20 @@
+
+
+Maven Parent :
+	purpl-multimodule
+
+	purpl-commons
+		Common code reused in webapp & task mgmt
+	purpl-webapp
+		Web related codes
+	purpl-taskmgmt
+		Batch & task jobs handled here
+	database-script
+		All the Sql
+
+		
+		
+Each page will have flow.xml for webweb flow
+.xtml=> richfaces view
+
+xhtml-> flow.xml-> action-> service-> Dao
