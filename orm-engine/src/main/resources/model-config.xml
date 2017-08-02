@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC 
+ "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" 
+ "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+ 
+<hibernate-reverse-engineering>
+ 
+ <!-- To get only the named tables -->
+ <schema-selection match-catalog="SCEMA_NAME" match-table="TABLE_NAME" />
+ 
+ <!-- To get all tables in the named schema -->
+ <!-- <schema-selection match-catalog="schema" match-table=".*" /> -->
+ 
+</hibernate-reverse-engineering>
